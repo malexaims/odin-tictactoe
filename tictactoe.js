@@ -1,4 +1,4 @@
-class Player {
+export class Player {
     constructor(name, token){
         this.name = name;
         this.token = token;
@@ -6,7 +6,7 @@ class Player {
     getName = () => this.name;
 }
 
-class GameBoard {
+export class GameBoard {
     constructor(rows, columns){
         this.rows = rows;
         this.columns = columns;
@@ -39,7 +39,7 @@ class GameBoard {
     }
 }
 
-class Cell {
+export class Cell {
     constructor(){
         this.token = '-';
     }
@@ -51,7 +51,7 @@ class Cell {
     showToken = () => this.token.toString();
 }
 
-class GameController{
+export class GameController{
     constructor(player1, player2, gameboard){
         this.player1 = player1;
         this.player2 = player2;
@@ -136,10 +136,10 @@ class GameController{
 let testBoard = new GameBoard(3, 3);
 testBoard.createStartingBoard();
 
-player1 = new Player("Bob", "X");
-player2 = new Player("Sally", "0");
+let player1 = new Player("Bob", "X");
+let player2 = new Player("Sally", "0");
 
-game = new GameController(player1, player2, testBoard);
+let game = new GameController(player1, player2, testBoard);
 
 game.playTurn(0,0);
 game.playTurn(1,1)
